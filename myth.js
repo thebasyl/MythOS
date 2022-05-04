@@ -82,6 +82,7 @@ const MENU_NAV = key =>
                     }
                     break;
                 case 2:
+                    document.removeEventListener('keydown', MENU_NAV, false);
                     menu = false;
                     context.fillStyle = "#4b692f";
                     context.fillRect(30, 22, 100, 100);
