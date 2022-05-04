@@ -64,12 +64,12 @@ const MENU_NAV = key =>
             break;
         case "Enter":
             select.play();
-            document.removeEventListener('keydown', MENU_NAV, false);
             switch(option)
             {
                 case 0:
                     if(!localStorage.getItem("win"))
                     {
+                        document.removeEventListener('keydown', MENU_NAV, false);
                         menu = false;
                         context.drawImage(SHEET, 160, 52, 46, 45, 56, 50, 46, 45);
                         setTimeout(() => 
@@ -78,7 +78,7 @@ const MENU_NAV = key =>
                         }, 1000);
                     } else 
                     {
-                        start();
+                        alert("you win")
                     }
                     break;
                 case 2:
@@ -99,6 +99,7 @@ const MENU_NAV = key =>
                     score = 3;
                     break;
                 default:
+                    document.removeEventListener('keydown', MENU_NAV, false);
                     menu = false;
                     context.drawImage(SHEET, 160, 52, 46, 45, 56, 50, 46, 45);
                     setTimeout(() => 
