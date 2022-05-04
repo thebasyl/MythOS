@@ -67,6 +67,20 @@ const MENU_NAV = key =>
             document.removeEventListener('keydown', MENU_NAV, false);
             switch(option)
             {
+                case 0:
+                    if(!localStorage.getItem("win"))
+                    {
+                        menu = false;
+                        context.drawImage(SHEET, 160, 52, 46, 45, 56, 50, 46, 45);
+                        setTimeout(() => 
+                        {
+                            start();
+                        }, 1000);
+                    } else 
+                    {
+                        start();
+                    }
+                    break;
                 case 2:
                     menu = false;
                     context.fillStyle = "#4b692f";
@@ -86,7 +100,11 @@ const MENU_NAV = key =>
                     break;
                 default:
                     menu = false;
-                    context.drawImage(SHEET, 160, 52, 46, 45, 56, 50, 46, 45)
+                    context.drawImage(SHEET, 160, 52, 46, 45, 56, 50, 46, 45);
+                    setTimeout(() => 
+                    {
+                        start();
+                    }, 1000);
                     break;
             }
             break;
